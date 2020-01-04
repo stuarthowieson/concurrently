@@ -217,6 +217,10 @@ Examples:
 
      $ concurrently npm:watch-*
 
+ - Shortened NPM run command with wildcard and random colors
+
+     $ concurrently --prefix-colors random npm:watch-*
+
 For more details, visit https://github.com/kimmobrunfeldt/concurrently
 ```
 

@@ -39,4 +39,8 @@ Examples:
 
      $ $0 npm:watch-*
 
+ - Shortened NPM run command with wildcard and random colors
+
+     $ $0 --prefix-colors random npm:watch-*
+
 For more details, visit https://github.com/kimmobrunfeldt/concurrently
