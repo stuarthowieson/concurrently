@@ -1,4 +1,17 @@
 const Rx = require('rxjs');
+const _ = require('lodash');
+
+const availablePrefixColors = [
+    'black', 'red', 'green',
+    'yellow', 'blue', 'magenta',
+    'cyan', 'white', 'gray',
+];
+
+const availablePrefixBgColors = [
+    'bgBlack', 'bgRed', 'bgGreen',
+    'bgYellow', 'bgBlue', 'bgMagenta',
+    'bgCyan', 'bgWhite',
+];
 
 module.exports = class Command {
     get killable() {
@@ -9,7 +22,7 @@ module.exports = class Command {
         this.index = index;
         this.name = name;
         this.command = command;
-        this.prefixColor = prefixColor;
+        this.prefixColor = this.selectPrefixColor(prefixColor);
         this.killProcess = killProcess;
         this.spawn = spawn;
         this.spawnOpts = spawnOpts;
@@ -18,6 +31,14 @@ module.exports = class Command {
         this.close = new Rx.Subject();
         this.stdout = new Rx.Subject();
         this.stderr = new Rx.Subject();
+    }
+
+    selectPrefixColor(prefixColor) {
+        return typeof prefixColor !== 'string' ? prefixColor : prefixColor
+            .replace('random',
+                availablePrefixColors[_.random(availablePrefixColors.length - 1)])
+            .replace('bgRandom',
+                availablePrefixBgColors[_.random(availablePrefixBgColors.length - 1)]);
     }
 
     start() {

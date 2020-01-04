@@ -76,9 +76,10 @@ const args = yargs
                 'Comma-separated list of chalk colors to use on prefixes. ' +
                 'If there are more commands than colors, the last color will be repeated.\n' +
                 '- Available modifiers: reset, bold, dim, italic, underline, inverse, hidden, strikethrough\n' +
-                '- Available colors: black, red, green, yellow, blue, magenta, cyan, white, gray\n' +
-                '- Available background colors: bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite\n' +
-                'See https://www.npmjs.com/package/chalk for more information.',
+                '- Available colors: black, red, green, yellow, blue, magenta, cyan, white, gray, random\n' +
+                '- Available background colors: bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite, bgRandom\n' +
+                'See https://www.npmjs.com/package/chalk for more information.\n' +
+                'Note: "random" and "bgRandom" are not chalk-supported colors.',
             default: defaults.prefixColors,
             type: 'string'
         },

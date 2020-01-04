@@ -137,11 +137,14 @@ Prefix styling
                           - Available modifiers: reset, bold, dim, italic,
                           underline, inverse, hidden, strikethrough
                           - Available colors: black, red, green, yellow, blue,
-                          magenta, cyan, white, gray
+                          magenta, cyan, white, gray, random
                           - Available background colors: bgBlack, bgRed,
-                          bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite
+                          bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite,
+                          bgRandom
                           See https://www.npmjs.com/package/chalk for more
-                          information.            [string] [default: "gray.dim"]
+                          information.
+                          Note: "random" and "bgRandom" are not chalk-supported
+                          colors.                 [string] [default: "gray.dim"]
   -l, --prefix-length     Limit how many characters of the command is displayed
                           in prefix. The option can be used to shorten the
                           prefix when it is set to "command"
